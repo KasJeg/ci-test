@@ -25,10 +25,10 @@ before_script:
 
 script:
   - npm run build
-  - docker build -t KasJeg/ci-test .
+  - docker build -t kasjeg/ci-test .
 
 after_script:
   - docker ps
-  - docker run -d --name ci-test -p "8081:80" KasJeg/ci-test
+  - docker run -d --name ci-test -p "8081:80" kasjeg/ci-test
   - docker ps
   - curl "http://localhost:8081/index.html"
